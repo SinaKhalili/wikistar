@@ -1,0 +1,48 @@
+{
+  "name": "wstar",
+  "displayName": "Wstar",
+  "version": "0.0.1",
+  "description": "Add the ability to star wikipedia pages!",
+  "author": "Sina Khalili <sinakhalili@outlook.com>",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.23.0",
+    "plasmo": "0.74.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "@plasmohq/storage": "1.6.1",
+    "@plasmohq/messaging": "0.3.3"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.0.237",
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.7",
+    "@types/react-dom": "18.2.4",
+    "prettier": "2.8.8",
+    "typescript": "5.0.4",
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.4"
+  },
+  "manifest": {
+    "key": "$CRX_KEY",
+    "host_permissions": [
+      "https://*/*"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "options.html"
+        ],
+        "matches": [
+          "<all_urls>"
+        ],
+        "extension_ids": [
+          "$CRX_ID"
+        ]
+      }
+    ]
+  }
+}

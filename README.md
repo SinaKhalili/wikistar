@@ -52,9 +52,7 @@ For further guidance, [visit the plasmo Documentation](https://docs.plasmo.com/)
 Run the following:
 
 ```bash
-pnpm build
-# or
-npm run build
+yarn build && yarn package
 ```
 
 This should create a production bundle for your extension, ready to be zipped and published to the stores.

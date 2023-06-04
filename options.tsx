@@ -1,21 +1,22 @@
 import { sendToBackground } from "@plasmohq/messaging"
 import { Storage } from "@plasmohq/storage"
 import { useStorage } from "@plasmohq/storage/hook"
-import type { Provider, User } from "@supabase/supabase-js"
+import type { Provider, Session, User } from "@supabase/supabase-js"
 import { useEffect, useState } from "react"
+
+import "./popupstyle.css"
+import "./signinbutton.css"
+import "./options.css"
 
 import { supabase } from "~core/supabase"
 
 function IndexOptions() {
-  const [user, setUser] = useStorage<User>({
-    key: "user",
+  const [session, setSession] = useStorage<Session>({
+    key: "session",
     instance: new Storage({
       area: "local"
     })
   })
-
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
 
   useEffect(() => {
     async function init() {
@@ -26,7 +27,8 @@ function IndexOptions() {
         return
       }
       if (!!data.session) {
-        setUser(data.session.user)
+        console.log(data.session)
+        setSession(data.session)
         sendToBackground({
           name: "init-session",
           body: {
@@ -40,36 +42,6 @@ function IndexOptions() {
     init()
   }, [])
 
-  const handleEmailLogin = async (
-    type: "LOGIN" | "SIGNUP",
-    username: string,
-    password: string
-  ) => {
-    try {
-      const {
-        error,
-        data: { user }
-      } =
-        type === "LOGIN"
-          ? await supabase.auth.signInWithPassword({
-              email: username,
-              password
-            })
-          : await supabase.auth.signUp({ email: username, password })
-
-      if (error) {
-        alert("Error with auth: " + error.message)
-      } else if (!user) {
-        alert("Signup successful, confirmation mail should be sent soon!")
-      } else {
-        setUser(user)
-      }
-    } catch (error) {
-      console.log("error", error)
-      alert(error.error_description || error)
-    }
-  }
-
   const handleOAuthLogin = async (provider: Provider, scopes = "email") => {
     await supabase.auth.signInWithOAuth({
       provider,
@@ -81,74 +53,36 @@ function IndexOptions() {
   }
 
   return (
-    <main
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-        top: 240,
-        position: "relative"
-      }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: 240,
-          justifyContent: "space-between",
-          gap: 4.2
-        }}>
-        {user && (
-          <>
-            <h3>
-              {user.email} - {user.id}
-            </h3>
-            <button
+    <main className="wh100">
+      <div className="wh100">
+        {session && (
+          <div className="double-center wh100 white serif">
+            <h1>
+              Logged in as {session.user.identities[0].identity_data.full_name}{" "}
+              {"<"}
+              {session.user.email}
+              {">"}
+            </h1>
+            <a
+              className="logout-button pointer"
               onClick={() => {
                 supabase.auth.signOut()
-                setUser(null)
+                setSession(null)
               }}>
-              Logout
-            </button>
-          </>
+              Logout?
+            </a>
+          </div>
         )}
-        {!user && (
-          <>
-            <label>Email</label>
-            <input
-              type="text"
-              placeholder="Your Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              placeholder="Your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-
+        {!session && (
+          <div className="w100 h100 double-center">
             <button
-              onClick={(e) => {
-                handleEmailLogin("SIGNUP", username, password)
-              }}>
-              Sign up
-            </button>
-            <button
-              onClick={(e) => {
-                handleEmailLogin("LOGIN", username, password)
-              }}>
-              Login
-            </button>
-
-            <button
+              className="signin-button"
               onClick={(e) => {
                 handleOAuthLogin("github")
               }}>
-              Sign in with GitHub
+              <h2>Sign in with GitHub</h2>
             </button>
-          </>
+          </div>
         )}
       </div>
     </main>

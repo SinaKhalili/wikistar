@@ -1,0 +1,168 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #10141c;
+}
+
+@font-face {
+  font-family: charter;
+  src: url(assets/charter_regular.woff2);
+}
+
+.wikistar-popup {
+  height: 800px;
+  width: 400px;
+  color: white;
+  padding-bottom: 3px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.serif {
+  font-family: "charter", serif;
+}
+
+.sans {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+}
+
+.title {
+  font-size: 20px;
+  /* character spacing */
+  letter-spacing: 1px;
+}
+
+.top {
+  border-bottom: 2px solid #6c6c71;
+  background-color: #10141c;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.logout-button {
+  background-color: #10141c;
+  border: none;
+  color: rgb(198, 198, 198);
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background-color: #1c1f2b;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin: 10px;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-left {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.greeting {
+  font-size: 20px;
+  margin: 10px 10px;
+}
+
+.mx10 {
+  margin: 0 10px;
+}
+
+.my10 {
+  margin: 10px 0;
+}
+
+.no-list-style {
+  list-style-type: none;
+  width: 100%;
+}
+
+.wiki-list-item {
+  margin: 10px 0;
+  border: 1px solid #6c6c71;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.wiki-list-item:hover {
+  box-shadow: 0 0 10px #53f800;
+}
+
+.wiki-list-item-a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wiki-list-item-p {
+  color: rgb(198, 198, 198);
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wiki-list-item-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  margin-left: 10px;
+}

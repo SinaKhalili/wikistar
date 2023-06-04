@@ -1,0 +1,27 @@
+.signin-button {
+  margin: 20px 0 0 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px white;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.signin-button:hover {
+  color: #767676;
+}
+
+.signin-button:active {
+  background-color: #10141c;
+}
+
+.signin-button > p {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.signin-margin {
+  margin: 0 10px;
+}

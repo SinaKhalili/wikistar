@@ -10,21 +10,22 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "@plasmohq/messaging": "0.3.3",
+    "@plasmohq/storage": "1.6.1",
     "@supabase/supabase-js": "2.23.0",
     "plasmo": "0.74.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@plasmohq/storage": "1.6.1",
-    "@plasmohq/messaging": "0.3.3"
+    "react-icons": "^4.9.0"
   },
   "devDependencies": {
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.4",
     "@types/chrome": "0.0.237",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",
     "@types/react-dom": "18.2.4",
     "prettier": "2.8.8",
-    "typescript": "5.0.4",
-    "@plasmohq/prettier-plugin-sort-imports": "3.6.4"
+    "typescript": "5.0.4"
   },
   "manifest": {
     "key": "$CRX_KEY",

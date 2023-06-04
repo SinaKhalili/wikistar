@@ -1,0 +1,53 @@
+.wikistar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.wikistar-icon {
+  margin-right: 5px;
+}
+
+.wikistar-yellow {
+  color: #eac54f;
+}
+
+.wikistar-button {
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 10px;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+}
+
+.wikistar-button:hover {
+  text-decoration: none;
+  background-color: #ddd;
+  background-image: linear-gradient(#eee, #ddd);
+  border-color: #ccc;
+}
+
+.wikistar-button:active {
+  background: #dcdcdc;
+  border-color: #b5b5b5;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.wikistar-container {
+  height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+.wikistar-button > svg {
+  height: 12px;
+  width: 12px;
+}

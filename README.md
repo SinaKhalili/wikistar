@@ -6,6 +6,7 @@
 A chrome extension that lets you "star" wikipedia articles
 like you would on github, so that you can find them later.
 
+_currently pending review at the chrome extension, feel free to use it unpacked_
 ## Demo
 
 <!-- Demo goes here -->

@@ -11,6 +11,10 @@ _currently pending review at the chrome extension, feel free to use it unpacked_
 
 <!-- Demo goes here -->
 
+https://github.com/SinaKhalili/wikistar/assets/20732540/43f35576-1434-4635-a5da-930685ab7ec8
+
+
+
 ## But why?
 
 So we were in a hotel room doing crosswords when the "CIRRI" and

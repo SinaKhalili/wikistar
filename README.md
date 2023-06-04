@@ -1,5 +1,8 @@
 # wikistar
 
+<img src="https://raw.githubusercontent.com/SinaKhalili/wikistar/main/assets/icon.png" align="right"
+     alt="wikistar logo" width="250">
+     
 A chrome extension that lets you "star" wikipedia articles
 like you would on github, so that you can find them later.
 

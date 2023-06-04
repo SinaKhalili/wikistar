@@ -3,7 +3,8 @@
   "displayName": "Wstar",
   "version": "0.0.1",
   "description": "Add the ability to star wikipedia pages!",
-  "author": "Sina Khalili <sinakhalili@outlook.com>",
+  "author": "Sina Khalili <sina@sinakhalili.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
